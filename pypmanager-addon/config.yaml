@@ -1,0 +1,25 @@
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
+name: PyP(ortfolio)Manager
+version: "1.0.0"
+slug: pypmanager
+description: A local portfolio manager.
+url: "https://github.com/ggravlingen/pypmanager-addon"
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+ports:
+  8001/tcp: 8001
+webui: "[PROTO:ssl]://[HOST]:[PORT:8001]"
+init: false
+ports_description:
+  8001/tcp: PyP(ortfolio)Manager web interface
+#map:
+#  - share:rw
+options:
+  message: "Hello world..."
+schema:
+  message: "str?"
+image: "ghcr.io/ggravlingen/{arch}-pypmanager-addon"
